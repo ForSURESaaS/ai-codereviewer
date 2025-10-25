@@ -18903,6 +18903,8 @@ class APIClient {
             retriesRemaining = options.maxRetries ?? this.maxRetries;
         }
         const { req, url, timeout } = this.buildRequest(options);
+		console.log('bbbbbbbbbbbb');
+		console.log(url);
         await this.prepareRequest(req, { url, options });
         debug('request', url, options, req.headers);
         if (options.signal?.aborted) {
