@@ -148,6 +148,7 @@ function getAIResponse(prompt) {
             frequency_penalty: 0,
             presence_penalty: 0,
         };
+		console.log(OPENAI_API_MODEL.slice(-10));
         try {
             const response = yield openai.chat.completions.create(Object.assign(Object.assign(Object.assign({}, queryConfig), (OPENAI_API_MODEL === "gpt-4-1106-preview"
                 ? { response_format: { type: "json_object" } }
@@ -158,8 +159,9 @@ function getAIResponse(prompt) {
                     },
                 ] }));
 			console.log(response.choices[0].message);
-            const res = ((_b = (_a = response.choices[0].message) === null || _a === void 0 ? void 0 : _a.content) === null || _b === void 0 ? void 0 : _b.trim()) || "{}";
-            return JSON.parse(res).reviews;
+			const clean = response.choices[0].message.replace(/```json|```/g, "").trim();
+            // const res = ((_b = (_a = response.choices[0].message) === null || _a === void 0 ? void 0 : _a.content) === null || _b === void 0 ? void 0 : _b.trim()) || "{}";
+            return JSON.parse(clean).reviews;
         }
         catch (error) {
             console.error("Error:", error);
