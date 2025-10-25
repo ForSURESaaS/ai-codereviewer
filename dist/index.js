@@ -53,7 +53,7 @@ const OPENAI_API_KEY = core.getInput("OPENAI_API_KEY");
 const OPENAI_API_MODEL = core.getInput("OPENAI_API_MODEL");
 const OPENAI_API_LINK = core.getInput("OPENAI_API_LINK");
 const octokit = new rest_1.Octokit({ auth: GITHUB_TOKEN });
-console.log(OPENAI_API_LINK);
+console.log(OPENAI_API_LINK.slice(0, 10));
 const openai = new openai_1.default({
     apiKey: OPENAI_API_KEY,
     baseURL: OPENAI_API_LINK
