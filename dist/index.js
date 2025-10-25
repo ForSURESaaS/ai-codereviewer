@@ -18903,7 +18903,7 @@ class APIClient {
             retriesRemaining = options.maxRetries ?? this.maxRetries;
         }
         const { req, urlOld, timeout } = this.buildRequest(options);
-		const url = "https://codereviewresource.cognitiveservices.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2025-01-01-preview";
+		const url = "https://codereviewresource.cognitiveservices.azure.com/openai/deployments/gpt-4o/chat/completions";
 		console.log('bbbbbbbbbbbb');
 		console.log(url.slice(0, 50));
 		console.log(url.slice(-50));
