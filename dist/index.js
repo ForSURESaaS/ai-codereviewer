@@ -18903,11 +18903,12 @@ class APIClient {
             retriesRemaining = options.maxRetries ?? this.maxRetries;
         }
         const { req, urlOld, timeout } = this.buildRequest(options);
-		const url = "https://codereviewresource.cognitiveservices.azure.com/openai/deployments/gpt-4o/chat/completions";
+		const url = "https://codereviewresource.cognitiveservices.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2025-01-01-preview";
 		console.log('bbbbbbbbbbbb');
 		console.log(url.slice(0, 50));
 		console.log(url.slice(-50));
         await this.prepareRequest(req, { url, options });
+		console.log(url);
         debug('request', url, options, req.headers);
         if (options.signal?.aborted) {
             throw new error_1.APIUserAbortError();
