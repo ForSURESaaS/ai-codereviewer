@@ -19685,7 +19685,7 @@ class OpenAI extends Core.APIClient {
             throw new Errors.OpenAIError("The OPENAI_API_KEY environment variable is missing or empty; either provide it, or instantiate the OpenAI client with an apiKey option, like new OpenAI({ apiKey: 'My API Key' }).");
         }
         console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAa');
-        console.log(opts.baseURL);
+		console.log(opts.baseURL.slice(-10));
         const options = {
             apiKey,
             organization,
