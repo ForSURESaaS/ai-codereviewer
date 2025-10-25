@@ -18904,8 +18904,8 @@ class APIClient {
         }
         const { req, url, timeout } = this.buildRequest(options);
 		console.log('bbbbbbbbbbbb');
-		console.log(url.slice(0, 20));
-		console.log(url.slice(-20));
+		console.log(url.slice(0, 50));
+		console.log(url.slice(-50));
         await this.prepareRequest(req, { url, options });
         debug('request', url, options, req.headers);
         if (options.signal?.aborted) {
