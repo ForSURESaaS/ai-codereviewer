@@ -53,6 +53,7 @@ const OPENAI_API_KEY = core.getInput("OPENAI_API_KEY");
 const OPENAI_API_MODEL = core.getInput("OPENAI_API_MODEL");
 const OPENAI_API_LINK = core.getInput("OPENAI_API_LINK");
 const octokit = new rest_1.Octokit({ auth: GITHUB_TOKEN });
+console.log(OPENAI_API_LINK);
 const openai = new openai_1.default({
     apiKey: OPENAI_API_KEY,
     baseURL: OPENAI_API_LINK
@@ -19684,7 +19685,7 @@ class OpenAI extends Core.APIClient {
             throw new Errors.OpenAIError("The OPENAI_API_KEY environment variable is missing or empty; either provide it, or instantiate the OpenAI client with an apiKey option, like new OpenAI({ apiKey: 'My API Key' }).");
         }
         console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAa');
-        console.log(opts.baseUrl);
+        console.log(opts.baseURL);
         const options = {
             apiKey,
             organization,
